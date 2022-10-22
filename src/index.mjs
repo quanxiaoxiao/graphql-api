@@ -9,6 +9,7 @@ import {
 } from 'graphql';
 
 export { default as GraphQLLongType } from './types/GraphQLLongType.mjs';
+export { default as getArgs } from './getArgs.mjs';
 
 const generateApis = (apis, typeName, logger) => Object.keys(apis)
   .reduce((acc, name) => ({
@@ -24,8 +25,8 @@ const generateApis = (apis, typeName, logger) => Object.keys(apis)
           }
           return ret;
         } catch (error) {
-          if (logger && logger.error) {
-            logger.error(`${apiName}, ${JSON.stringify(args)}, \`${error.message}\``);
+          if (logger && logger.warn) {
+            logger.warn(`${apiName}, ${JSON.stringify(args)}, \`${error.message}\``);
           }
         }
         return null;

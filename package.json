@@ -1,6 +1,6 @@
 {
   "name": "@quanxiaoxiao/graphql",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "keywords": [],
   "author": "",
@@ -9,12 +9,14 @@
   "exports": "./src/index.mjs",
   "type": "module",
   "scripts": {
-    "lint": "eslint src/* --ignore-path .gitignore"
+    "lint": "eslint src/* --ignore-path .gitignore",
+    "test": "ava"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "ava": "^4.3.3",
     "graphql": "^16.6.0"
   },
   "devDependencies": {
